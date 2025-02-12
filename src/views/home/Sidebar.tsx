@@ -25,16 +25,15 @@ const navItems: NavItem[] = [
   {
     title: "Quienes Somos",
     icon: Users,
-    href: "#",
+    href: "/about",
   },
   {
     title: "Destinos",
     icon: MapPin,
-    href: "/destinos",
+    href: "/destinations",
     submenu: [
-      { title: "Explorar Destinos", href: "/destinos/explorar" },
-      { title: "Populares", href: "/destinos/populares" },
-      { title: "Nuevos", href: "/destinos/nuevos" },
+      { title: "Explorar Destinos", href: "/destinations/explore" },
+      { title: "Populares", href: "/destinations/popular" },
     ],
   },
   {
