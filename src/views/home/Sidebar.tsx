@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Book, ChevronDown, MapPin, Mail, Menu, X, Home, Users } from "lucide-react"
 import type React from "react"
 import { cn } from "../../utils/cn"
+import { Link } from "react-router-dom"
 
 interface NavItem {
   title: string
@@ -22,13 +23,18 @@ const navItems: NavItem[] = [
     href: "/",
   },
   {
+    title: "Quienes Somos",
+    icon: Users,
+    href: "#",
+  },
+  {
     title: "Destinos",
     icon: MapPin,
     href: "/destinos",
     submenu: [
-      { title: "Explorar Destinos", href: "#" },
-      { title: "Populares", href: "#" },
-      { title: "Nuevos", href: "#" },
+      { title: "Explorar Destinos", href: "/destinos/explorar" },
+      { title: "Populares", href: "/destinos/populares" },
+      { title: "Nuevos", href: "/destinos/nuevos" },
     ],
   },
   {
@@ -37,23 +43,14 @@ const navItems: NavItem[] = [
     href: "/blog",
     submenu: [
       { title: "Artículos", href: "/blog/articles" },
-      { title: "Guías", href: "#" },
-      { title: "Tips de Viaje", href: "#" },
+      { title: "Guías", href: "/blog/guias" },
+      { title: "Tips de Viaje", href: "/blog/tips" },
     ],
   },
   {
     title: "Contacto",
     icon: Mail,
-    href: "/contacto",
-    submenu: [
-      { title: "Enviar Mensaje", href: "/contact/message" },
-      { title: "Información", href: "#" },
-    ],
-  },
-  {
-    title: "Quienes Somos",
-    icon: Users,
-    href: "#",
+    href: "/contact",
   },
 ]
 
@@ -93,36 +90,43 @@ export function Sidebar() {
           <nav className="flex-1 py-6">
             {navItems.map((item) => (
               <div key={item.title}>
-                <button
-                  onClick={() => toggleDropdown(item.title)}
-                  className={cn(
-                    "flex items-center w-full px-6 py-3 text-sm transition-colors",
-                    "hover:bg-gray-800 hover:text-white hover:cursor-pointer",
-                    activeDropdown === item.title && "bg-gray-800 text-white",
-                  )}
-                >
-                  <item.icon className="w-5 h-5 mr-3" />
-                  <span className="flex-1 text-left">{item.title}</span>
-                  {item.submenu && (
+                {item.submenu ? (
+                  <button
+                    onClick={() => toggleDropdown(item.title)}
+                    className={cn(
+                      "flex items-center w-full px-6 py-3 text-sm transition-colors",
+                      "hover:bg-gray-800 hover:text-white hover:cursor-pointer",
+                      activeDropdown === item.title && "bg-gray-800 text-white",
+                    )}
+                  >
+                    <item.icon className="w-5 h-5 mr-3" />
+                    <span className="flex-1 text-left">{item.title}</span>
                     <ChevronDown
                       className={cn("w-4 h-4 transition-transform", activeDropdown === item.title && "rotate-180")}
                     />
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "flex items-center w-full px-6 py-3 text-sm transition-colors",
+                      "hover:bg-gray-800 hover:text-white",
+                    )}
+                  >
+                    <item.icon className="w-5 h-5 mr-3" />
+                    <span>{item.title}</span>
+                  </Link>
+                )}
                 {item.submenu && activeDropdown === item.title && (
                   <div className="bg-gray-800 py-2">
                     {item.submenu.map((subItem) => (
-                      // <Link to={subItem.href}
-                      //   className="flex items-center pl-14 pr-6 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors">
-                      //   {subItem.title}
-                      // </Link>
-                      <a
+                      <Link
                         key={subItem.title}
-                        href={subItem.href}
+                        to={subItem.href}
                         className="flex items-center pl-14 pr-6 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
                       >
                         {subItem.title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

@@ -8,7 +8,7 @@ export const AppRouter = () => {
       <LayoutHome>
         <Routes>
           <Route path="/" element = {<HomeView />}/> 
-          <Route path="/contact/message" element = {<ContactForm />}/>
+          <Route path="/contact" element = {<ContactForm />}/>
           <Route path="/blog/articles" element = {<BlogView />}/> 
         </Routes>
       </LayoutHome>
