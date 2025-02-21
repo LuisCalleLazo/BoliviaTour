@@ -28,13 +28,17 @@ const navItems: NavItem[] = [
     href: "/about",
   },
   {
-    title: "Destinos",
+    
+    title: "Productos y Servicios",
     icon: MapPin,
-    href: "/destinations",
-    submenu: [
-      { title: "Explorar Destinos", href: "/destinations/explore" },
-      { title: "Populares", href: "/destinations/popular" },
-    ],
+    href: "/product-service",
+    // title: "Destinos",
+    // icon: MapPin,
+    // href: "/destinations",
+    // submenu: [
+    //   { title: "Explorar Destinos", href: "/destinations/explore" },
+    //   { title: "Populares", href: "/destinations/popular" },
+    // ],
   },
   {
     title: "Blog",
@@ -42,8 +46,8 @@ const navItems: NavItem[] = [
     href: "/blog",
     submenu: [
       { title: "Artículos", href: "/blog/articles" },
-      { title: "Guías", href: "/blog/guias" },
-      { title: "Tips de Viaje", href: "/blog/tips" },
+      // { title: "Guías", href: "/blog/guias" },
+      // { title: "Tips de Viaje", href: "/blog/tips" },
     ],
   },
   {

@@ -1,11 +1,15 @@
+import { useNavigate } from "react-router-dom"
+
 interface DestinationCardProps {
   title: string
   image: string
 }
 
 export function DestinationCard({ title, image }: DestinationCardProps) {
+  const navigate = useNavigate();
   return (
-    <div className="group rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow hover:cursor-pointer">
+    <div className="group rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow hover:cursor-pointer"
+      onClick={() => {navigate('/product-service-detail')}}>
       <div className="relative overflow-hidden">
         <img
           src={image || "/placeholder.svg"}

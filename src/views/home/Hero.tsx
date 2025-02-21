@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="relative h-[60vh] bg-gray-900">
       <img
@@ -11,10 +14,13 @@ export function Hero() {
           EXPLORA SUDAMÉRICA CON NOSOTROS
         </h1>
         <div className="flex gap-4 justify-end w-full max-w-7xl px-4">
-          <button className="px-6 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          <button 
+            className="px-6 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            onClick={() => {navigate('/product-service')}}>
             Ver Productos
           </button>
-          <button className="px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          <button className="px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            onClick={() => {navigate('/contact')}}>
             Contáctanos
           </button>
         </div>

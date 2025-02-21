@@ -19,7 +19,7 @@ export const Footer = () =>
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to="/productos-servicios" className="hover:text-white">
+                <Link to="/product-service" className="hover:text-white">
                   Productos y Servicios
                 </Link>
               </li>

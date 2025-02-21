@@ -5,3 +5,5 @@ export * from './home/HomeView';
 export * from './about/AboutView';
 export * from './turisc/ExploreView';
 export * from './turisc/DestionationsPopular';
+export * from './product/ProductDetail';
+export * from './product/ProductsView';
