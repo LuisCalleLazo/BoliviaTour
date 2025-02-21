@@ -1,6 +1,6 @@
 
 import { Route, Routes } from "react-router-dom";
-import {AboutView, BlogView, ContactForm, DestionationsPopular, ExploreView, HomeView, LayoutHome} from '../views'
+import {AboutView, BlogView, ContactView, DestionationsPopular, ExploreView, HomeView, LayoutHome} from '../views'
 export const AppRouter = () => {
 
   return (
@@ -9,7 +9,7 @@ export const AppRouter = () => {
         <Routes>
           <Route path="/" element = {<HomeView />}/> 
           <Route path="/about" element = {<AboutView />}/>
-          <Route path="/contact" element = {<ContactForm />}/>
+          <Route path="/contact" element = {<ContactView />}/>
           <Route path="/blog/articles" element = {<BlogView />}/> 
           <Route path="/destinations/explore" element = {<ExploreView />}/> 
           <Route path="/destinations/popular" element = {<DestionationsPopular />}/> 
