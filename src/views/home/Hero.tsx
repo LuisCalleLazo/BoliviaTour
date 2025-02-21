@@ -6,9 +6,19 @@ export function Hero() {
         alt="Paisaje de Sudamérica"
         className="w-full h-full object-cover opacity-60"
       />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-4xl md:text-6xl text-white font-bold text-center px-4">EXPLORA SUDAMÉRICA CON NOSOTROS</h1>
+      <div className="absolute inset-0 flex items-center justify-center flex-wrap">
+        <h1 className="text-4xl md:text-6xl text-white font-bold text-center px-4 mb-12">
+          EXPLORA SUDAMÉRICA CON NOSOTROS
+        </h1>
+        <div className="flex gap-4 justify-end w-full max-w-7xl px-4">
+          <button className="px-6 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            Ver Productos
+          </button>
+          <button className="px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            Contáctanos
+          </button>
+        </div>
       </div>
     </section>
-  )
+  );
 }
