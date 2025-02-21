@@ -47,7 +47,7 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    title: "Contacto",
+    title: "Contactanos",
     icon: Mail,
     href: "/contact",
   },
