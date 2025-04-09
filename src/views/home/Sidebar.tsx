@@ -5,7 +5,7 @@ import { Book, ChevronDown, MapPin, Mail, Menu, X, Home, Users } from "lucide-re
 import type React from "react"
 import { cn } from "../../utils/cn"
 import { Link } from "react-router-dom"
-
+import logo from "../../assets/icons/logo.png";
 interface NavItem {
   title: string
   icon: React.ElementType
@@ -87,7 +87,9 @@ export function Sidebar() {
       >
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-gray-800">
-            <h1 className="text-2xl font-bold text-white">Bolivia Tour</h1>
+            <div>
+              <img src={logo} alt="" />
+            </div>
           </div>
 
           <nav className="flex-1 py-6">
