@@ -40,6 +40,23 @@ export const HomeView = () =>
   return(
     <>
       <Hero />
+      {/* Mision y Vision */}
+      <section className="max-w-7xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-bold mb-8">MISION</h2>
+        <p className="text-gray-600 mb-8">
+          Somos una agencia de viajes que brinda experiencias unicas e innovadoras con una relacion respetuosa del ambiente.
+          Nos caracteriza la personalización de nuestros servicios turistíticos, ofreciendo servicios de calidad y confianza.
+          Realizando viajes a medida del cliente.
+        </p>
+        <h2 className="text-3xl font-bold mb-8">VISION</h2>
+        <p className="text-gray-600 mb-8">
+          Ser referentes a nivel nacional e internacional, reconocidos por nuestra experiencia, confianza, calidad, innovación
+          y valores; comprometidos con la conservación de los recursos naturales; impulsando el desarrollo de un turismo sostenible
+          y sustentable
+        </p>
+      </section>
+
+
       {/* Destinations Section */}
       <section className="max-w-7xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold mb-8">DESTINOS EXPLORADOS DE SUDAMÉRICA</h2>

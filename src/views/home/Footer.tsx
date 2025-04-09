@@ -8,7 +8,7 @@ export const Footer = () =>
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-2">Nuestra Empresa</h3>
-            <p className="text-gray-400">Ofreciendo productos y servicios de calidad desde 2023.</p>
+            <p className="text-gray-400">Ofreciendo productos y servicios de calidad desde 2025.</p>
           </div>
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-2">Enlaces Rápidos</h3>
@@ -32,8 +32,9 @@ export const Footer = () =>
           </div>
           <div className="w-full md:w-1/3">
             <h3 className="text-xl font-bold mb-2">Contáctanos</h3>
-            <p className="text-gray-400">Email: info@empresa.com</p>
-            <p className="text-gray-400">Teléfono: (123) 456-7890</p>
+            <p className="text-gray-400">Email (1): turismo.extremo.bo@gmail.com</p>
+            <p className="text-gray-400">Email (2): joseuscamaytaespiritu@gmail.com</p>
+            <p className="text-gray-400">Teléfono: (591) 78886429</p>
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">

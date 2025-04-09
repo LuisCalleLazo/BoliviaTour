@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, HourglassIcon } from "lucide-react"
 
 export const ContactInfo = () =>
   {
@@ -9,7 +9,7 @@ export const ContactInfo = () =>
           <ul className="space-y-4">
             <li className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-gray-600" />
-              <span>+591 788 24 516</span>
+              <span>+591 788 86 429</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-gray-600" />
@@ -17,7 +17,11 @@ export const ContactInfo = () =>
             </li>
             <li className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-gray-600" />
-              <span>Av. Buenos Aires</span>
+              <span>Calle Sagarnaga entre linares e illampu Nº 334, oficina 4</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <HourglassIcon className="w-5 h-5 text-gray-600" />
+              <span>10:00 am - 19:30 pm</span>
             </li>
           </ul>
         </div>

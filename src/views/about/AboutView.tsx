@@ -65,8 +65,7 @@ export const AboutView = () => {
       <div className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-semibold text-center mb-8 text-gray-800">Sobre Nosotros</h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-          Somos una agencia de viajes apasionada por crear experiencias únicas e inolvidables. Con años de experiencia,
-          nos dedicamos a hacer realidad los sueños de viaje de nuestros clientes.
+          Somos una agencia operadora de turismo, que se dedica a organizar y vender planes turisticos
         </p>
       </div>
 
@@ -81,10 +80,7 @@ export const AboutView = () => {
                   <span className="text-2xl">{index + 1}</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">{feature}</h3>
-                <p className="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua.
-                </p>
+                
               </div>
             ))}
           </div>

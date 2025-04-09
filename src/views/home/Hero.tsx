@@ -11,7 +11,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 flex items-center justify-center flex-wrap">
         <h1 className="text-4xl md:text-6xl text-white font-bold text-center px-4 mb-12">
-          EXPLORA SUDAMÉRICA CON NOSOTROS
+          VIAJES A MEDIDA
         </h1>
         <div className="flex gap-4 justify-end w-full max-w-7xl px-4">
           <button 

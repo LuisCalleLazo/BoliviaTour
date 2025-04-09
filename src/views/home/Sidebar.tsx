@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Book, ChevronDown, MapPin, Mail, Menu, X, Home, Users } from "lucide-react"
+import { ChevronDown, MapPin, Mail, Menu, X, Home, Users } from "lucide-react"
 import type React from "react"
 import { cn } from "../../utils/cn"
 import { Link } from "react-router-dom"
@@ -40,16 +40,16 @@ const navItems: NavItem[] = [
     //   { title: "Populares", href: "/destinations/popular" },
     // ],
   },
-  {
-    title: "Blog",
-    icon: Book,
-    href: "/blog",
-    submenu: [
-      { title: "Artículos", href: "/blog/articles" },
-      // { title: "Guías", href: "/blog/guias" },
-      // { title: "Tips de Viaje", href: "/blog/tips" },
-    ],
-  },
+  // {
+  //   title: "Blog",
+  //   icon: Book,
+  //   href: "/blog",
+  //   submenu: [
+  //     { title: "Artículos", href: "/blog/articles" },
+  //     // { title: "Guías", href: "/blog/guias" },
+  //     // { title: "Tips de Viaje", href: "/blog/tips" },
+  //   ],
+  // },
   {
     title: "Contactanos",
     icon: Mail,
