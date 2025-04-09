@@ -1,5 +1,5 @@
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import {AboutView, BlogView, ContactView, DestionationsPopular, ExploreView, HomeView, LayoutHome, ProductServiceView, ProductsView} from '../views'
 export const AppRouter = () => {
 
@@ -7,6 +7,7 @@ export const AppRouter = () => {
     <>
       <LayoutHome>
         <Routes>
+          <Route path='*' element={<Navigate to='/' replace />} />
           <Route path="/" element = {<HomeView />}/> 
           <Route path="/about" element = {<AboutView />}/>
           <Route path="/contact" element = {<ContactView />}/>

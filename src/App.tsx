@@ -1,13 +1,15 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { AppRouter } from './routes/AppRouter'
+import { LoginView } from './views/admin/LoginView'
 
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path="*" element={<AppRouter/>}/>
+        <Route path="*" element={ <AppRouter/> }/>
+        <Route path='admin' element={ <LoginView /> }/>
       </Routes>
       <div className="fixed right-[30px] bottom-[30px] z-50">
         <div className="bg-green-500 rounded-full size-15 flex pt-0.5 pl-0.5 
