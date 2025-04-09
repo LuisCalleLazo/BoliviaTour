@@ -1,27 +1,50 @@
-import { useNavigate } from "react-router-dom"
+"use client"
+
+import { useState } from "react"
+import { ArrowRight } from "lucide-react"
 
 interface DestinationCardProps {
   title: string
   image: string
 }
 
-export function DestinationCard({ title, image }: DestinationCardProps) {
-  const navigate = useNavigate();
+export const DestinationCard = ({ title, image }: DestinationCardProps) => {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
-    <div className="group rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow hover:cursor-pointer"
-      onClick={() => {navigate('/product-service-detail')}}>
-      <div className="relative overflow-hidden">
+    <div
+      className="relative overflow-hidden rounded-xl shadow-lg group h-80"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Image with overlay */}
+      <div className="absolute inset-0 w-full h-full">
         <img
-          src={image || "/placeholder.svg"}
+          src={image || "/placeholder.svg?height=400&width=600"}
           alt={title}
-          className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-300"></div>
       </div>
-      <div className="p-4">
-        <h3 className="font-bold text-xl mb-2">{title}</h3>
-        <p className="text-gray-600">Descubre este increíble destino en Sudamérica.</p>
+
+      {/* Content */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white transition-all duration-300 transform">
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+
+        <div
+          className={`flex items-center overflow-hidden transition-all duration-500 ease-in-out ${
+            isHovered ? "max-h-20 opacity-100 mt-2" : "max-h-0 opacity-0"
+          }`}
+        >
+          <a
+            href={`/destinations/${title.toLowerCase().replace(/,\s|\s/g, "-")}`}
+            className="inline-flex items-center text-sm font-medium text-white hover:text-teal-300 transition-colors"
+          >
+            Descubrir destino
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </a>
+        </div>
       </div>
     </div>
   )
 }
-
