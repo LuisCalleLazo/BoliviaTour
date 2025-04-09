@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.0.4",
     "bolivia-tour": "file:",
     "clsx": "^2.1.1",
+    "firebase": "^11.6.0",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
