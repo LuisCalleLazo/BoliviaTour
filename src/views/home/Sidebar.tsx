@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, MapPin, Mail, Menu, X, Home, Users, Globe } from "lucide-react";
+import { ChevronDown, MapPin, Mail, Menu, X, Home, Users } from "lucide-react";
 import type React from "react";
 import { cn } from "../../utils/cn";
 import { Link } from "react-router-dom";
@@ -44,8 +44,8 @@ export function Sidebar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
-  const [showLanguages, setShowLanguages] = useState(false);
-  const [currentLang, setCurrentLang] = useState('es');
+  // const [showLanguages, setShowLanguages] = useState(false);
+  // const [currentLang, setCurrentLang] = useState('es');
 
 
   const { i18n } = useTranslation();
@@ -54,11 +54,11 @@ export function Sidebar() {
     setActiveDropdown(activeDropdown === title ? null : title);
   };
 
-  const handleLanguageChange = (lang: string) => {
-    setCurrentLang(lang);
-    setShowLanguages(false);
-    // Here you would typically call your i18n.changeLanguage function
-  };
+  // const handleLanguageChange = (lang: string) => {
+  //   setCurrentLang(lang);
+  //   setShowLanguages(false);
+  //   // Here you would typically call your i18n.changeLanguage function
+  // };
   
   const getUserBrowserLanguage = () => {
     const lang = window.navigator.language;
