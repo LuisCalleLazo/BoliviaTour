@@ -180,7 +180,7 @@ export const HomeView = () => {
           {/* Call to Action */}
           <div className="mt-16 text-center">
             <a
-              href="/destinations"
+              href="/product-service"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               Ver todos los destinos
