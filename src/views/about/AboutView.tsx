@@ -6,7 +6,9 @@ export const AboutView = () => {
     'https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=250&h=150&fit=crop',
     'https://images.unsplash.com/photo-1560964645-5296b5099677?w=250&h=150&fit=crop',
     'https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=250&h=150&fit=crop',
-    'https://images.unsplash.com/photo-1564594736624-def7a10ab047?w=250&h=150&fit=crop',
+    'https://images.unsplash.com/photo-1560964645-5296b5099677?w=250&h=150&fit=crop',
+    'https://images.unsplash.com/photo-1566438480900-0609be27a4be?w=250&h=150&fit=crop',
+    'https://images.unsplash.com/photo-1560964645-5296b5099677?w=250&h=150&fit=crop',
   ];
 
   return (
@@ -86,20 +88,22 @@ export const AboutView = () => {
       {/* Partners Section */}
       <div className="py-16 overflow-hidden bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent font-travel">
             Nuestros Socios de Viaje
           </h2>
-          <div className="relative">
-            <div className="flex space-x-8 animate-marquee">
-              {[...logos, ...logos].map((logo, index) => (
+          
+          <div className="carousel-container">
+            <div className="carousel-track">
+              {logos.map((logo, index) => (
                 <div 
-                  key={index} 
-                  className="flex-shrink-0 w-[250px] h-[150px] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-all duration-300"
+                  key={index}
+                  className="flex-shrink-0 w-[250px] mx-4 h-[150px] rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-all duration-300 bg-white"
                 >
                   <img
                     src={logo}
                     alt={`Partner ${index + 1}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}

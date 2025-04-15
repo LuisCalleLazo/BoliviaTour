@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { ChevronDown, MapPin, Mail, Menu, X, Home, Users } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ChevronDown, MapPin, Mail, Menu, X, Home, Users, Globe } from "lucide-react";
 import type React from "react";
 import { cn } from "../../utils/cn";
 import { Link } from "react-router-dom";
 import logo from "../../assets/icons/logo.png";
+import { useTranslation } from "react-i18next";
 
 interface NavItem {
   title: string;
@@ -43,9 +44,33 @@ export function Sidebar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
-  const toggleDropdown = (menu: string) => {
-    setActiveDropdown(activeDropdown === menu ? null : menu);
+  const [showLanguages, setShowLanguages] = useState(false);
+  const [currentLang, setCurrentLang] = useState('es');
+
+
+  const { i18n } = useTranslation();
+
+  const toggleDropdown = (title: string) => {
+    setActiveDropdown(activeDropdown === title ? null : title);
   };
+
+  const handleLanguageChange = (lang: string) => {
+    setCurrentLang(lang);
+    setShowLanguages(false);
+    // Here you would typically call your i18n.changeLanguage function
+  };
+  
+  const getUserBrowserLanguage = () => {
+    const lang = window.navigator.language;
+    if (lang.includes("es")) return "es";
+    if (lang.includes("en")) return "en";
+    return "en";
+  };
+  
+  useEffect(() => {
+    const userBrowserLang = getUserBrowserLanguage();
+    i18n.changeLanguage(userBrowserLang);
+  }, []);
 
   return (
     <>
@@ -58,23 +83,57 @@ export function Sidebar() {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-3 bg-gradient-to-r to-sky-900 from-emerald-900 rounded-full shadow-lg text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+        className="lg:hidden fixed top-4 left-4 z-50 p-3 bg-gradient-to-r to-black from-emerald-900 rounded-full shadow-lg text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300"
       >
         {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
       <aside
         className={cn(
-          "fixed top-0 left-0 h-full w-[260px] bg-gradient-to-b to-sky-900 from-emerald-900 text-white shadow-2xl transform transition-all duration-500 ease-out z-40",
+          "fixed top-0 left-0 h-full w-[260px] bg-gradient-to-b to-emerald-900 from-black text-white shadow-2xl transform transition-all duration-500 ease-out z-40",
           "border-r border-white/10",
           isOpen ? "translate-x-0" : "-translate-x-full",
           "lg:translate-x-0",
         )}
       >
+        {/* <div className="language-selector">
+          <button 
+            onClick={() => setShowLanguages(!showLanguages)}
+            className="flex items-center space-x-2"
+          >
+            <Globe className="w-4 h-4" />
+            <span>{currentLang.toUpperCase()}</span>
+          </button>
+          <div className={cn("options", showLanguages && "active")}>
+            <div 
+              className="option"
+              onClick={() => handleLanguageChange('es')}
+            >
+              <img 
+                src="https://flagcdn.com/w40/es.png" 
+                alt="Español" 
+                className="flag"
+              />
+              <span>Español</span>
+            </div>
+            <div 
+              className="option"
+              onClick={() => handleLanguageChange('en')}
+            >
+              <img 
+                src="https://flagcdn.com/w40/gb.png" 
+                alt="English" 
+                className="flag"
+              />
+              <span>English</span>
+            </div>
+          </div>
+        </div> */}
+
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-white/10 bg-white/5 backdrop-blur-sm">
             <div className="flex justify-center items-center transform hover:scale-105 transition-transform duration-300">
-              <img src={logo} alt="Bolivia Tour Logo" className="h-16 object-contain" />
+              <img src={logo} alt="Bolivia Tour Logo" className="h-28 object-contain" />
             </div>
           </div>
 

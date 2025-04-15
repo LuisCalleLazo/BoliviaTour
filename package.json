@@ -14,9 +14,11 @@
     "bolivia-tour": "file:",
     "clsx": "^2.1.1",
     "firebase": "^11.6.0",
+    "i18next": "^25.0.0",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1",
     "react-router-dom": "^7.1.5",
     "tailwind-merge": "^3.0.1"
   },

@@ -63,7 +63,7 @@ export const ProductsView = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Link 
-              to={`/product-service-detail/${product.id}`} 
+              to={`/product-service-detail`} 
               key={product.id} 
               className="group"
             >

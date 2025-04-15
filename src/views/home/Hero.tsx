@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
+// import { useTranslation } from "react-i18next";
 
 export function Hero() {
   const navigate = useNavigate();
+  // const { t } = useTranslation();
+  
   return (
     <section className="relative h-[60vh] bg-gray-900">
       <img
@@ -11,7 +14,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 flex items-center justify-center flex-wrap">
         <h1 className="text-4xl md:text-6xl text-white font-bold text-center px-4 mb-12">
-          VIAJES A MEDIDA
+          VIAJE A TU MEDIDA
         </h1>
         <div className="flex gap-4 justify-end w-full max-w-7xl px-4">
           <button 
