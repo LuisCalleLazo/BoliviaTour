@@ -6,12 +6,22 @@
 
 }
 
+@font-face {
+  font-family: 'TravelJournal';
+  src: url('./fonts/TravelJournal.woff2') format('woff2'),
+       url('./fonts/TravelJournal.woff') format('woff'),
+       url('./fonts/TravelJournal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'TravelJournal', cursive;
 }
-
 
 /* VARIABLES DE CSS */
 @layer
@@ -36,3 +46,4 @@ base {
       --bg-target: #11114422;
     }
 }
+
